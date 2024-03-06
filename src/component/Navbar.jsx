@@ -7,7 +7,7 @@ const Navbar = () => {
     console.log(xyz);
     return (
         <>
-            <nav className="navbar navbar-expand-lg bg-light bg-white py-3 shadow-sm">
+            <nav className="navbar navbar-expand-lg bg-light bg-white shadow-sm">
                 <div className="container">
                     <NavLink className="navbar-brand fw-bold fs-4" to="/">KHAN EMART</NavLink>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

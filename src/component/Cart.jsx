@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 const Cart = () => {
   // Access the cart state from the Redux store
   const cartItems = useSelector((state) => state.cartReducer.cartItems);
+  const cart = useSelector((state) => state.cartReducer);
   const dispatch = useDispatch();
   
   const handleDecrement =  (item) => {
@@ -16,7 +17,7 @@ const Cart = () => {
     dispatch({ type: "EMPTY_CART", payload: item });
   }
   return (
-    <div className="container mt-4">
+    <div className="container mt-4" style={{marginBottom:"100px"}}>
       <h1 className="mb-4">Shopping Cart</h1>
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
@@ -51,6 +52,12 @@ const Cart = () => {
           </div>
         ))
       )}
+      <hr />
+      <div className="row">
+        <h4>Cart Subtotal: {cart.totalPrice.toFixed(2)}</h4>
+        <h5>Total Item: {cart.qty}</h5>
+        <button style={{ maxWidth: "250px",marginLeft:"10px",background:"#FFD814", backgroundColor:"#FCD200;",color:"black"}} className="btn btn-sm btn-primary">Proceed to Checkout</button>
+      </div>
     </div>
   );
 };
